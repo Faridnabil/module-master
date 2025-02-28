@@ -1,4 +1,3 @@
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) module-master 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 3.724s. Listening on: http://localhost:8080
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-orm-rest-data-panache, jdbc-postgresql, narayana-jta, rest, rest-jackson, rest-links, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
-2025-02-27 19:07:43 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-72) Live reload total time: 7.480s 
+2025-02-28 14:17:21 INFO  [io.quarkus] (Quarkus Main Thread) module-master 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 13.003s. Listening on: http://localhost:8080
+2025-02-28 14:17:21 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-02-28 14:17:21 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-orm-rest-data-panache, jdbc-postgresql, narayana-jta, rest, rest-jackson, rest-links, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
