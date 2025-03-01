@@ -6,15 +6,21 @@ import lombok.*;
 @Entity
 @Data
 @Table(name = "users")
-@NoArgsConstructor
-@AllArgsConstructor
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
     private String password;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
+    private String role;
 }

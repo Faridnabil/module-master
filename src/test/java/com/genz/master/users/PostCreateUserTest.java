@@ -34,7 +34,7 @@ public class PostCreateUserTest {
     @Test
     void testCreateUser() {
         UserRequestDto userRequestDto = new UserRequestDto();
-        userRequestDto.setName("John Doe");
+        userRequestDto.setUsername("John Doe");
         userRequestDto.setEmail("john.doe@example.com");
         userRequestDto.setPassword("password");
 

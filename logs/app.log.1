@@ -1,0 +1,31 @@
+2025-03-01 16:39:47 INFO  [io.quarkus] (Quarkus Main Thread) module-master 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 2.747s. Listening on: http://0.0.0.0:8081
+2025-03-01 16:39:47 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-03-01 16:39:47 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-orm-rest-data-panache, jdbc-postgresql, narayana-jta, rest, rest-jackson, rest-links, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+2025-03-01 16:39:47 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-5) Live reload total time: 2.879s 
+2025-03-01 16:52:36 ERROR [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-7) Failed to delete resources: java.nio.file.NoSuchFileException: C:\java\genz-company\module-master\target\classes\application.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:104)
+	at java.base/java.nio.file.Files.delete(Files.java:1152)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.checkForFileChange(RuntimeUpdatesProcessor.java:1013)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:477)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:455)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:163)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:150)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$4(ContextImpl.java:192)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.impl.ContextImpl$1.execute(ContextImpl.java:221)
+	at io.vertx.core.impl.WorkerTask.run(WorkerTask.java:56)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1591)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2025-03-01 16:52:36 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-7) Restarting quarkus due to changes in application.properties.
+2025-03-01 16:52:36 INFO  [io.quarkus] (Quarkus Main Thread) module-master stopped in 0.147s

@@ -33,7 +33,7 @@ public class PutUpdateUserTest {
     @Test
     void testUpdateUser() {
         UserRequestDto userRequestDto = new UserRequestDto();
-        userRequestDto.setName("John Doe Updated");
+        userRequestDto.setUsername("John Doe Updated");
         userRequestDto.setEmail("john.doe.updated@example.com");
         userRequestDto.setPassword("newpassword");
 

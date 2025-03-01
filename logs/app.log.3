@@ -1,4 +1,28 @@
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) module-master 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 3.724s. Listening on: http://localhost:8080
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2025-02-27 19:07:43 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-orm-rest-data-panache, jdbc-postgresql, narayana-jta, rest, rest-jackson, rest-links, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
-2025-02-27 19:07:43 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-72) Live reload total time: 7.480s 
+2025-03-01 16:31:38 INFO  [io.quarkus] (Quarkus Main Thread) module-master 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 4.004s. Listening on: http://0.0.0.0:8081
+2025-03-01 16:31:38 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-03-01 16:31:38 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-orm-rest-data-panache, jdbc-postgresql, narayana-jta, rest, rest-jackson, rest-links, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+2025-03-01 16:31:38 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 14.481s 
+2025-03-01 16:35:13 ERROR [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Failed to replace classes via instrumentation: java.lang.IllegalArgumentException: Not a method parameter
+	at org.jboss.jandex.TypeTarget.asMethodParameter(TypeTarget.java:201)
+	at io.quarkus.deployment.dev.ClassComparisonUtil.methodMap(ClassComparisonUtil.java:158)
+	at io.quarkus.deployment.dev.ClassComparisonUtil.compareMethodAnnotations(ClassComparisonUtil.java:133)
+	at io.quarkus.deployment.dev.ClassComparisonUtil.isSameStructure(ClassComparisonUtil.java:95)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:516)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:455)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:163)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:150)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$4(ContextImpl.java:192)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.impl.ContextImpl$1.execute(ContextImpl.java:221)
+	at io.vertx.core.impl.WorkerTask.run(WorkerTask.java:56)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1591)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2025-03-01 16:35:13 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Restarting quarkus due to changes in UserResource.class.
+2025-03-01 16:35:13 INFO  [io.quarkus] (Quarkus Main Thread) module-master stopped in 0.086s
