@@ -11,6 +11,7 @@ public class UserResponseDto {
     private String username;
     private String email;
     private String role;
+    private boolean statusAktif;
 
     public UserResponseDto(UserEntity user) {
         this.id = user.getId();
@@ -18,5 +19,6 @@ public class UserResponseDto {
         this.email = user.getEmail();
         this.email = user.getEmail();
         this.role = user.getRole();
+        this.statusAktif = user.isStatusAktif();
     }
 }

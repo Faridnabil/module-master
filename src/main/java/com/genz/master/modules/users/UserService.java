@@ -1,6 +1,8 @@
 package com.genz.master.modules.users;
 
 import com.genz.master.modules.users.dto.UserRequestDto;
+import com.genz.master.utility.PasswordHasher;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -29,8 +31,11 @@ public class UserService {
         UserEntity user = new UserEntity();
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
-        user.setRole(userDto.getRole()); // Role bisa diambil dari DTO atau default
+
+        String hashedPassword = PasswordHasher.hash(userDto.getPassword());
+        user.setPassword(hashedPassword);
+
+        user.setRole(userDto.getRole());
 
         userRepository.persist(user);
         return user;
@@ -47,7 +52,12 @@ public class UserService {
             UserEntity existingUser = existingUserOptional.get();
             existingUser.setUsername(userDto.getUsername());
             existingUser.setEmail(userDto.getEmail());
-            existingUser.setPassword(userDto.getPassword());
+
+            // Hash password baru jika diubah
+            if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
+                String hashedPassword = PasswordHasher.hash(userDto.getPassword());
+                existingUser.setPassword(hashedPassword);
+            }
 
             userRepository.persist(existingUser);
             return Optional.of(existingUser);
