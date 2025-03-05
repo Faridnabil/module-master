@@ -6,9 +6,9 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class CustRepository implements PanacheRepository<CustEntity> {
+public class CustomerRepository implements PanacheRepository<CustomerEntity> {
 
-    public Optional<CustEntity> findByName(String name) {
+    public Optional<CustomerEntity> findByName(String name) {
         return find("name", name).firstResultOptional();
     }
 }

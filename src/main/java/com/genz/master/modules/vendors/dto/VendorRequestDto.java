@@ -1,11 +1,11 @@
-package com.genz.master.modules.customers.dto;
+package com.genz.master.modules.vendors.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class CustRequestDto {
+public class VendorRequestDto {
 
     @NotBlank(message = "Name is required")
     private String name;

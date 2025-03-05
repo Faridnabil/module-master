@@ -5,7 +5,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
-import com.genz.master.modules.customers.dto.CustRequestDto;
+import com.genz.master.modules.customers.dto.CustomerRequestDto;
 import com.genz.master.modules.users.UserEntity;
 import com.genz.master.modules.users.UserRepository;
 import com.genz.master.utility.PasswordHasher;
@@ -15,15 +15,15 @@ import java.util.Optional;
 
 @ApplicationScoped
 @RequiredArgsConstructor
-public class CustService {
+public class CustomerService {
 
-    private final CustRepository custRepository;
+    private final CustomerRepository custRepository;
 
     private final UserRepository userRepository;
 
     private final JsonWebToken jwt;
 
-    public List<CustEntity> getAllCustomers() {
+    public List<CustomerEntity> getAllCustomers() {
         if (!jwt.getGroups().contains("Admin")) {
             return custRepository.find("name", jwt.getName()).list();
         }
@@ -31,8 +31,8 @@ public class CustService {
     }
 
     @Transactional
-    public CustEntity create(CustRequestDto request, boolean hasUserAccount) {
-        CustEntity customer = new CustEntity();
+    public CustomerEntity create(CustomerRequestDto request, boolean hasUserAccount) {
+        CustomerEntity customer = new CustomerEntity();
         customer.setName(request.getName());
         customer.setEmail(request.getEmail()); // Email diisi dari request
         customer.setNoTelephone(request.getNoTelephone());
@@ -63,15 +63,15 @@ public class CustService {
         return customer;
     }
 
-    public Optional<CustEntity> getCustByName(String name) {
+    public Optional<CustomerEntity> getCustByName(String name) {
         return custRepository.findByName(name);
     }
 
     @Transactional
-    public Optional<CustEntity> update(Long id, CustRequestDto custDto) {
-        Optional<CustEntity> existingCustOptional = custRepository.findByIdOptional(id);
+    public Optional<CustomerEntity> update(Long id, CustomerRequestDto custDto) {
+        Optional<CustomerEntity> existingCustOptional = custRepository.findByIdOptional(id);
         if (existingCustOptional.isPresent()) {
-            CustEntity existingCust = existingCustOptional.get();
+            CustomerEntity existingCust = existingCustOptional.get();
 
             // Perbarui data customer
             existingCust.setName(custDto.getName());
@@ -111,9 +111,9 @@ public class CustService {
 
     @Transactional
     public boolean delete(Long id) {
-        Optional<CustEntity> customerOptional = custRepository.findByIdOptional(id);
+        Optional<CustomerEntity> customerOptional = custRepository.findByIdOptional(id);
         if (customerOptional.isPresent()) {
-            CustEntity customer = customerOptional.get();
+            CustomerEntity customer = customerOptional.get();
 
             // Soft delete customer
             customer.setDeleted(true);
